@@ -1,0 +1,6 @@
+sed 's/0x//g'|sed 's/,//g'|tr -d ' ' | tr -d '\n'
+
+sed 's/.\{2\}/&,0x/g' | sed 's/^/0x/' | sed 's/.\{39\}/&\n/g'
+
+sed -i -e 's/^/prefix/'
+sed 's/.\{2\}/&,0x/g' | sed 's/^/0x/' | sed 's/.\{40\}/&\n/g' | sed 's/,/, /g'
